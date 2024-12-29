@@ -1,11 +1,11 @@
 #include "./raylib.h"
 #include <stdio.h>
 #include <math.h>
-#define WIDTH 1920
-#define HEIGHT 1200
+#define WIDTH 800
+#define HEIGHT 500
 
-#define LINE_COLS 1920/160
-#define LINE_ROWS 1200/100
+#define LINE_COLS 16
+#define LINE_ROWS 10
 
 typedef struct {
     int x, y, w, h;
@@ -28,7 +28,7 @@ int main(void) {
     InitWindow(WIDTH, HEIGHT, "raylib");
     while(!WindowShouldClose()) {
         Vector2 mp = GetMousePosition();
-        printf("%f:%f\n", mp.x, mp.y);
+        // printf("%f:%f\n", mp.x, mp.y);
         update(lines, LINE_ROWS, LINE_COLS, mp.x, mp.y, WIDTH, HEIGHT);
         draw(lines, LINE_ROWS, LINE_COLS,0,0);
     }
